@@ -1,0 +1,31 @@
+{
+  "name": "messenger-bot",
+  "version": "1.0.0",
+  "description": "The Messenger Platform is your toolbox for building bots. Start here to learn about the core components available for you to build with, and to get some guidance on how to start thinking about designing bots on the Platform.",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chebaby/messenger-bot.git"
+  },
+  "keywords": [
+    "messenger-bot",
+    "messenger-platform"
+  ],
+  "author": "Nour-Eddine ECH-CHEBABY",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/chebaby/messenger-bot/issues"
+  },
+  "homepage": "https://github.com/chebaby/messenger-bot#readme",
+  "dependencies": {
+    "body-parser": "^1.15.0",
+    "express": "^4.13.4",
+    "request": "^2.72.0"
+  },
+  "engines": {
+    "node": "~4.1.2"
+  }
+}
