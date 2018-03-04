@@ -4,7 +4,7 @@
   "description": "The Messenger Platform is your toolbox for building bots. Start here to learn about the core components available for you to build with, and to get some guidance on how to start thinking about designing bots on the Platform.",
   "main": "app.js",
   "scripts": {
-    "start": "node --nolazy --debug-brk app.js"
+    "start": "node --inspect app.js"
   },
   "repository": {
     "type": "git",
