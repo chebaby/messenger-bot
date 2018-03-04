@@ -2,7 +2,7 @@
 
 // Imports dependencies and set up http server
 
-const 
+const
   request = require('request'),
   express = require('express'),
   body_parser = require('body-parser'),
@@ -12,7 +12,7 @@ const
 app.listen(process.env.PORT || 1337, () => console.log('webhook is listening'));
 
 // Accepts POST requests at /webhook endpoint
-app.post('/webhook', (req, res) => {  
+app.post('/webhook', (req, res) => {
 
   // Parse the request body from the POST
   let body = req.body;
@@ -23,11 +23,11 @@ app.post('/webhook', (req, res) => {
     // Iterate over each entry - there may be multiple if batched
     body.entry.forEach(function(entry) {
 
-      // Get the webhook event. entry.messaging is an array, but 
+      // Get the webhook event. entry.messaging is an array, but
       // will only ever contain one event, so we get index 0
       let webhook_event = entry.messaging[0];
       console.log(webhook_event);
-      
+
     });
 
     // Return a '200 OK' response to all events
@@ -42,28 +42,28 @@ app.post('/webhook', (req, res) => {
 
 // Accepts GET requests at the /webhook endpoint
 app.get('/webhook', (req, res) => {
-  
+
   /** UPDATE YOUR VERIFY TOKEN **/
-  const VERIFY_TOKEN = "<YOUR_VERIFY_TOKEN>";
-  
+  const VERIFY_TOKEN = "AssociationAlinbiaatTazemmourt";
+
   // Parse params from the webhook verification request
   let mode = req.query['hub.mode'];
   let token = req.query['hub.verify_token'];
   let challenge = req.query['hub.challenge'];
-    
+
   // Check if a token and mode were sent
   if (mode && token) {
-  
+
     // Check the mode and token sent are correct
     if (mode === 'subscribe' && token === VERIFY_TOKEN) {
-      
+
       // Respond with 200 OK and challenge token from the request
       console.log('WEBHOOK_VERIFIED');
       res.status(200).send(challenge);
-    
+
     } else {
       // Responds with '403 Forbidden' if verify tokens do not match
-      res.sendStatus(403);      
+      res.sendStatus(403);
     }
   }
 });
